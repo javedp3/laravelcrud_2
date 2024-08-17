@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<h1 class="text-center">Employee Details Updated..</h1>
+<h1 class="text-center">Employee Details Updated</h1>
 <div class="container mt-3">
     <div class="row ">
         <div class="form-area card m-2 p-2 border-dark">
