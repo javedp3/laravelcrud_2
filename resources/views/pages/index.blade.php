@@ -9,7 +9,7 @@
                 @csrf
                 <div class="row ">
                     <div class="col-md-6 ">
-                        <label for="">Employee Name</label>
+                        <label for="">Emp Name</label>
                         <input type="text" name="employee_name" class="form-control">
                     </div>
                     <div class="col-md-6">
