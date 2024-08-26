@@ -1,13 +1,38 @@
 pipeline {
     agent any
-    
-    stages {  
-        
+    stages {
         stage('Checkout') {
             steps {
-                
                 git 'https://github.com/javedp3/laravelcrud_2.git'
             }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                sh 'composer install'
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                sh 'vendor/bin/phpunit'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'npm install && npm run production'
+            }
+        }
+      
+    }
+
+    post {
+        success {
+            echo 'Build and deployment successful'
+        }
+        failure {
+            echo 'Build or deployment failed'
         }
     }
 }
